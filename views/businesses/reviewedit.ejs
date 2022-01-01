@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Review</title>
+</head>
+
+<body>
+    <h1>Edit Review</h1>
+    <form action="/business/<%=business._id%>/review/<%=review._id%>?_method=PUT" method="POST">class="mb-3 validated-form" novalidate>
+        <div class="mb-3">
+            <label class="form-label" for="rating">Rating</label>
+            <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="body">Review</label>
+            <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <button class="btn btn-success">Submit</button>
+    </form>
+    <a href="/business/<%= business._id%>">Back To Business</a>
+
+</body>
+
+</html>
